@@ -5,7 +5,7 @@ from tkinter import messagebox
 
 win = tk.Tk()
 win.title("KodPixel-X-Second-Timer")
-win.geometry("520x570")
+win.geometry("570x570")
 
 config = configparser.ConfigParser()
 
@@ -16,7 +16,9 @@ def FileControl():
    else:
     print("Creating File")
     config['settings'] = {
-       'color': 'red'
+       'color': 'red',
+       'theme': 'DefaultTheme'
+
    }
 
     with open ('Settings.ini', 'w') as f:
@@ -31,9 +33,103 @@ FileControl()
 def about():
    messagebox.showinfo("KodPixel-X-Second-Timer", "This is a Second Timer, an open-source project. This project is licensed under GPL V3.")
 
+def DarkTheme():
+   win.config(bg="black")
+   button.config(bg="white")
+   buttonb.config(bg="white")
+   buttonr.config(bg="white")
+   buttong.config(bg="white")
+   buttony.config(bg="white")
+   buttonbb.config(bg="white")
+   buttonw.config(bg="white")
+   buttono.config(bg="white")
+   buttonPause.config(bg="white")
+   buttonStop.config(bg="white")
+   buttonabout.config(bg="white")
+   button.config(fg="black")
+   buttonb.config(fg="black")
+   buttonr.config(fg="black")
+   buttong.config(fg="black")
+   buttony.config(fg="black")
+   buttonbb.config(fg="black")
+   buttonw.config(fg="black")
+   buttono.config(fg="black")
+   buttonPause.config(fg="black")
+   buttonStop.config(fg="black")
+   buttonabout.config(fg="black")
+
+   config['settings'] = {
+       'color': 'black',
+       'theme': 'darktheme'
+   }
+   with open ('Settings.ini', 'w') as f:
+     config.write(f)
+
+def LightTheme():
+   win.config(bg="white")
+   button.config(bg="black")
+   buttonb.config(bg="black")
+   buttonr.config(bg="black")
+   buttong.config(bg="black")
+   buttony.config(bg="black")
+   buttonbb.config(bg="black")
+   buttonw.config(bg="black")
+   buttono.config(bg="black")
+   buttonPause.config(bg="black")
+   buttonStop.config(bg="black")
+   buttonabout.config(bg="black")
+   button.config(fg="white")
+   buttonb.config(fg="white")
+   buttonr.config(fg="white")
+   buttong.config(fg="white")
+   buttony.config(fg="white")
+   buttonbb.config(fg="white")
+   buttonw.config(fg="white")
+   buttono.config(fg="white")
+   buttonPause.config(fg="white")
+   buttonStop.config(fg="white")
+   buttonabout.config(fg="white")
+   config['settings'] = {
+       'color': 'white',
+       'theme': 'lighttheme'
+   }
+   with open ('Settings.ini', 'w') as f:
+     config.write(f)
+
+
+def DefaultTheme():
+   win.config(bg="red")
+   button.config(bg="yellow")
+   buttonb.config(bg="yellow")
+   buttonr.config(bg="yellow")
+   buttong.config(bg="yellow")
+   buttony.config(bg="yellow")
+   buttonbb.config(bg="yellow")
+   buttonw.config(bg="yellow")
+   buttono.config(bg="yellow")
+   buttonPause.config(bg="yellow")
+   buttonStop.config(bg="yellow")
+   buttonabout.config(bg="yellow")
+   button.config(fg="black")
+   buttonb.config(fg="black")
+   buttonr.config(fg="black")
+   buttong.config(fg="black")
+   buttony.config(fg="black")
+   buttonbb.config(fg="black")
+   buttonw.config(fg="black")
+   buttono.config(fg="black")
+   buttonPause.config(fg="black")
+   buttonStop.config(fg="black")
+   buttonabout.config(fg="black")
+   config['settings'] = {
+       'color': 'black'
+   }
+   with open ('Settings.ini', 'w') as f:
+     config.write(f)
+
+config.read('Settings.ini')
 
 color = config.get('settings', 'color')
-config.read('Settings.ini')
 
 if color == "red":
     win.config(bg="red")
@@ -55,6 +151,7 @@ elif color == "white":
 
 elif color == "orange":
    win.config(bg="orange")
+
 
 label = tk.Label(win, text="0", font=("Arial", 25))
 label.pack(pady=20)
@@ -156,6 +253,10 @@ def orange():
      config.write(f)
     
 
+
+
+
+
 button = tk.Button(win, text="Start", command=plus)
 button.pack(pady=10,)
 
@@ -204,6 +305,13 @@ buttonStop.config(bg="red")
 buttonabout = tk.Button(win, text="About", command=about)
 buttonabout.pack()
 
+DarkTheme2 = tk.Button(win, text="DarkTheme", command=DarkTheme)
+DarkTheme2.pack()
 
+LightTheme2  = tk.Button(win, text="LightTheme", command=LightTheme)
+LightTheme2.pack()
+
+DefaultTheme2 = tk.Button(win, text="DefaultTheme", command=DefaultTheme)
+DefaultTheme2.pack()
 
 win.mainloop()
