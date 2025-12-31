@@ -7,31 +7,12 @@ win = tk.Tk()
 win.title("KodPixel-X-Second-Timer")
 win.geometry("570x570")
 
-config = configparser.ConfigParser()
-
-def FileControl():
-   if os.path.exists("Settings.ini"):
-    print("File Creating")
-    config.read("Settings.ini")
-   else:
-    print("Creating File")
-    config['settings'] = {
-       'color': 'red',
-       'theme': 'DefaultTheme'
-
-   }
-
-    with open ('Settings.ini', 'w') as f:
-     config.write(f)
-    
-
-      
-
-FileControl()
 
 
 def about():
    messagebox.showinfo("KodPixel-X-Second-Timer", "This is a Second Timer, an open-source project. This project is licensed under GPL V3.")
+
+
 
 def DarkTheme():
    win.config(bg="black")
@@ -59,8 +40,7 @@ def DarkTheme():
    buttonabout.config(fg="black")
 
    config['settings'] = {
-       'color': 'black',
-       'theme': 'darktheme'
+       'color': 'darktheme'
    }
    with open ('Settings.ini', 'w') as f:
      config.write(f)
@@ -90,8 +70,7 @@ def LightTheme():
    buttonStop.config(fg="white")
    buttonabout.config(fg="white")
    config['settings'] = {
-       'color': 'white',
-       'theme': 'lighttheme'
+       'color': 'lighttheme'
    }
    with open ('Settings.ini', 'w') as f:
      config.write(f)
@@ -122,39 +101,11 @@ def DefaultTheme():
    buttonStop.config(fg="black")
    buttonabout.config(fg="black")
    config['settings'] = {
-       'color': 'black'
+       'color': 'defaulttheme'
    }
    with open ('Settings.ini', 'w') as f:
      config.write(f)
 
-config.read('Settings.ini')
-
-color = config.get('settings', 'color')
-
-if color == "red":
-    win.config(bg="red")
-
-elif color == "green":
-    win.config(bg="green")
-
-elif color == "yellow":
-    win.config(bg="yellow")
-
-elif color == "blue":
-    win.config(bg="blue")
-
-elif color == "black":
-   win.config(bg="black")
-
-elif color == "white":
-   win.config(bg="white")
-
-elif color == "orange":
-   win.config(bg="orange")
-
-
-label = tk.Label(win, text="0", font=("Arial", 25))
-label.pack(pady=20)
 
 def plus():
     ButtonBool = True
@@ -251,6 +202,13 @@ def orange():
    
    with open ('Settings.ini', 'w') as f:
      config.write(f)
+
+
+
+label = tk.Label(win, text="0", font=("Arial", 25))
+label.pack(pady=20)
+
+
     
 
 
@@ -313,5 +271,64 @@ LightTheme2.pack()
 
 DefaultTheme2 = tk.Button(win, text="DefaultTheme", command=DefaultTheme)
 DefaultTheme2.pack()
+
+
+config = configparser.ConfigParser()
+
+def FileControl():
+   if os.path.exists("Settings.ini"):
+    print("File Creating")
+    config.read("Settings.ini")
+   else:
+    print("Creating File")
+    config['settings'] = {
+       'color': 'defaulttheme',
+
+   }
+
+    with open ('Settings.ini', 'w') as f:
+     config.write(f)
+    
+
+      
+
+FileControl()
+
+config.read('Settings.ini')
+
+color = config.get('settings', 'color')
+
+if color == "red":
+    win.config(bg="red")
+
+elif color == "green":
+    win.config(bg="green")
+
+elif color == "yellow":
+    win.config(bg="yellow")
+
+elif color == "blue":
+    win.config(bg="blue")
+
+elif color == "black":
+   win.config(bg="black")
+
+elif color == "white":
+   win.config(bg="white")
+
+elif color == "orange":
+   win.config(bg="orange")
+
+elif color == "darktheme":
+   DarkTheme()
+
+
+elif color == "lighttheme":
+   LightTheme()
+
+elif color == "defaulttheme":
+   DefaultTheme()
+
+
 
 win.mainloop()
