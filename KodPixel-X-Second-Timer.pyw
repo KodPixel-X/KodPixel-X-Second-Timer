@@ -8,7 +8,6 @@ win.title("KodPixel-X-Second-Timer")
 win.geometry("580x580")
 
 
-
 def about():
    messagebox.showinfo("KodPixel-X-Second-Timer", "This is a Second Timer, an open-source project. This project is licensed under GPL V3.")
 
@@ -30,6 +29,8 @@ def DarkTheme():
    button.config(fg="black")
    buttonb.config(fg="black")
    buttonr.config(fg="black")
+   txtsavebutton(bg="white")
+   txtsavebutton(fg="black")
    buttong.config(fg="black")
    buttony.config(fg="black")
    buttonbb.config(fg="black")
@@ -50,6 +51,8 @@ def LightTheme():
    button.config(bg="black")
    buttonb.config(bg="black")
    buttonr.config(bg="black")
+   txtsavebutton(bg="black")
+   txtsavebutton(fg="white")
    buttong.config(bg="black")
    buttony.config(bg="black")
    buttonbb.config(bg="black")
@@ -89,6 +92,8 @@ def DefaultTheme():
    buttonPause.config(bg="orange")
    buttonStop.config(bg="red")
    buttonabout.config(bg="yellow")
+   txtsavebutton.config(bg="green")
+   txtsavebutton.config(fg="black")
    button.config(fg="black")
    buttonb.config(fg="black")
    buttonr.config(fg="black")
@@ -203,7 +208,14 @@ def orange():
    with open ('Settings.ini', 'w') as f:
      config.write(f)
 
+def txtsave2():
+   desktop = os.path.join(os.path.expanduser("~"), "Desktop")
+   txtsave3 = txtsave.get()
 
+   filename = os.path.join(desktop, "save.txt")
+
+   with open(filename, "w") as f:
+      f.write(txtsave3 + "\n")
 
 label = tk.Label(win, text="0", font=("Arial", 25))
 label.pack(pady=20)
@@ -272,6 +284,16 @@ LightTheme2.pack()
 DefaultTheme2 = tk.Button(win, text="DefaultTheme", command=DefaultTheme)
 DefaultTheme2.pack()
 
+txtsave = tk.Entry(win)
+txtsave.pack()
+
+txtsave.bind("<Return>", txtsave2)
+
+labeltxtsave = tk.Label(win, text="Enter the second you stopped in the box above and press the button below to save, and make sure to fill in the box before pressing the button.", font=("Arial", 10))
+labeltxtsave.pack()
+
+txtsavebutton = tk.Button(win, text="Save", command=txtsave2)
+txtsavebutton.pack()
 
 config = configparser.ConfigParser()
 
