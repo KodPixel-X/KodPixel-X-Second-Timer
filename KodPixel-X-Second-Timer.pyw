@@ -49,42 +49,42 @@ def DarkTheme():
      config.write(f)
 
 def LightTheme():
-   win.config(bg="white")
-   button.config(bg="white")
-   buttonb.config(bg="white")
-   txtbutton2.config(bg="white")
-   buttonr.config(bg="white")
-   txtsavebutton(bg="white")
-   txtsavebutton(fg="black")
-   buttong.config(bg="white")
-   buttony.config(bg="white")
-   buttonbb.config(bg="white")
-   buttonw.config(bg="white")
-   buttono.config(bg="white")
-   buttonPause.config(bg="white")
-   buttonStop.config(bg="white")
-   buttonabout.config(bg="white")
-   button.config(fg="black")
-   buttonb.config(fg="black")
-   buttonr.config(fg="black")
-   buttong.config(fg="black")
-   txtbutton2.config(fg="black")
-   buttony.config(fg="black")
-   buttonbb.config(fg="black")
-   buttonw.config(fg="black")
-   buttono.config(fg="black")
-   buttonPause.config(fg="black")
-   buttonStop.config(fg="black")
-   buttonabout.config(fg="black")
-   config['settings'] = {
+    win.config(bg="white")
+    button.config(bg="white")
+    buttonb.config(bg="white")
+    buttonr.config(bg="white")
+    buttong.config(bg="white")
+    txtbutton2.config(bg="white")
+    buttony.config(bg="white")
+    buttonbb.config(bg="white")
+    buttonw.config(bg="white")
+    buttono.config(bg="white")
+    buttonPause.config(bg="white")
+    buttonStop.config(bg="white")
+    buttonabout.config(bg="white")
+    txtsavebutton.config(bg="white")
+    txtsavebutton.config(fg="black")
+    button.config(fg="black")
+    buttonb.config(fg="black")
+    txtbutton2.config(fg="black")
+    buttonr.config(fg="black")
+    buttong.config(fg="black")
+    buttony.config(fg="black")
+    buttonbb.config(fg="black")
+    buttonw.config(fg="black")
+    buttono.config(fg="black")
+    buttonPause.config(fg="black")
+    buttonStop.config(fg="black")
+    buttonabout.config(fg="black")
+    config['settings'] = {
        'color': 'lighttheme'
    }
-   with open ('Settings.ini', 'w') as f:
+    with open ('Settings.ini', 'w') as f:
      config.write(f)
 
 
 def DefaultTheme():
-   win.config(bg="white")
+   win.config(bg="red")
    button.config(bg="green")
    buttonb.config(bg="yellow")
    buttonr.config(bg="yellow")
@@ -235,12 +235,6 @@ def txtsave4():
 
 label = tk.Label(win, text="0", font=("Arial", 25))
 label.pack(pady=20)
-
-
-    
-
-
-
 
 
 button = tk.Button(win, text="Start", command=plus)
