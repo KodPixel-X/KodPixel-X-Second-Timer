@@ -14,39 +14,48 @@ def about():
 
 
 
-def DarkTheme():
-   win.config(bg="black")
-   button.config(bg="white")
-   buttonb.config(bg="white")
-   buttonr.config(bg="white")
-   buttong.config(bg="white")
-   buttony.config(bg="white")
-   buttonbb.config(bg="white")
-   buttonw.config(bg="white")
-   buttono.config(bg="white")
-   txtopenb.config(bg="white")
-   buttonPause.config(bg="white")
-   buttonStop.config(bg="white")
-   buttonabout.config(bg="white")
-   button.config(fg="black")
-   buttonb.config(fg="black")
-   buttonr.config(fg="black")
-   txtsavebutton(bg="white")
-   txtsavebutton(fg="black")
-   txtopenb.config(bg="black")
-   buttong.config(fg="black")
-   buttony.config(fg="black")
-   buttonbb.config(fg="black")
-   buttonw.config(fg="black")
-   buttono.config(fg="black")
-   buttonPause.config(fg="black")
-   buttonStop.config(fg="black")
-   buttonabout.config(fg="black")
 
-   config['settings'] = {
+def DarkTheme():
+    win.config(bg="black")
+    button.config(bg="black")
+    buttonb.config(bg="black")
+    buttonr.config(bg="black")
+    buttong.config(bg="black")
+    buttony.config(bg="black")
+    txtopenb.config(bg="black")
+    buttonbb.config(bg="black")
+    buttonw.config(bg="black")
+    buttono.config(bg="black")
+    buttonPause.config(bg="black")
+    buttonStop.config(bg="black")
+    buttonabout.config(bg="black")
+    txtsavebutton.config(bg="black")
+    txtsavebutton.config(fg="white")
+    button.config(fg="white")
+    buttonb.config(fg="white")
+    txtopenb.config(fg="white")
+    buttonr.config(fg="white")
+    buttong.config(fg="white")
+    buttony.config(fg="white")
+    buttonbb.config(fg="white")
+    buttonw.config(fg="white")
+    buttono.config(fg="white")
+    buttonPause.config(fg="white")
+    buttonStop.config(fg="white")
+    buttonabout.config(fg="white")
+    label.config(bg="black")
+    label.config(fg="white")
+    DarkTheme2.config(bg="black")
+    DarkTheme2.config(fg="white")
+    LightTheme2.config(bg="black")
+    LightTheme2.config(fg="white")
+    DefaultTheme2.config(bg="black")
+    DefaultTheme2.config(fg="white")
+
+    config['settings'] = {
        'color': 'darktheme'
    }
-   with open ('Settings.ini', 'w') as f:
+    with open ('Settings.ini', 'w') as f:
      config.write(f)
 
 def LightTheme():
@@ -77,6 +86,15 @@ def LightTheme():
     buttonPause.config(fg="black")
     buttonStop.config(fg="black")
     buttonabout.config(fg="black")
+    label.config(bg="white")
+    label.config(fg="black")
+    DarkTheme2.config(bg="white")
+    DarkTheme2.config(fg="black")
+    LightTheme2.config(bg="white")
+    LightTheme2.config(fg="black")
+    DefaultTheme2.config(bg="white")
+    DefaultTheme2.config(fg="black")
+
     config['settings'] = {
        'color': 'lighttheme'
    }
@@ -112,6 +130,15 @@ def DefaultTheme():
    buttonPause.config(fg="black")
    buttonStop.config(fg="black")
    buttonabout.config(fg="black")
+   label.config(bg="red")
+   label.config(fg="black")
+   DarkTheme2.config(bg="black")
+   DarkTheme2.config(fg="white")
+   LightTheme2.config(bg="white")
+   LightTheme2.config(fg="black")
+   DefaultTheme2.config(bg="red")
+   DefaultTheme2.config(fg="yellow")
+
    config['settings'] = {
        'color': 'defaulttheme'
    }
@@ -290,6 +317,7 @@ LightTheme2.pack()
 
 DefaultTheme2 = tk.Button(win, text="DefaultTheme", command=DefaultTheme)
 DefaultTheme2.pack()
+
 
 global txtsave
 
