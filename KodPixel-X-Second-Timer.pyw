@@ -4,9 +4,11 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
 
+
 win = tk.Tk()
 win.title("KodPixel-X-Second-Timer")
 win.geometry("790x630")
+win.iconbitmap("KodPixel-X-Second-Timer.ico")
 
 
 def about():
