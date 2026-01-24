@@ -3,6 +3,7 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
+from plyer import notification
 
 
 win = tk.Tk()
@@ -253,11 +254,19 @@ def txtsave4():
 
     if path:
       path.write(txt51)
+      notification.notify( 
+        title="KodPixel-X-Second-Timer",
+        message="Dosya Kaydedildi Başarıyla"
+    )
 
 def txtsave999():
    pathopen = filedialog.askopenfile(mode="r")
    pathread = pathopen.read()
    txtopenl.config(text=pathread)
+   notification.notify(
+   title="KodPixel-X-Second-Timer",
+   message="Dosya Başarıyla Okundu"
+)
 
 label = tk.Label(win, text="0", font=("Arial", 25))
 label.pack(pady=20)
