@@ -3,6 +3,7 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
+from tkinter import Menu
 from plyer import notification
 
 
@@ -16,7 +17,19 @@ def about():
    messagebox.showinfo("KodPixel-X-Second-Timer", "This is a Second Timer, an open-source project. This project is licensed under GPL V3.")
 
 
+def TR():
+   button.config(text="Başlat")
+   buttonb.config(text="Arka plan rengini mavi yap.")
+   buttonPause.config(text="Duraklat")
+   txtopenb.config(text="aç")
+   buttonStop.config(text="Durdur")
+   buttonabout.config(text="Açıklama")
+   txtsavebutton.config(text="kaydet")
+   DarkTheme2.config(text="Siyah Tema Yap")
+   LightTheme2.config(text="Açık Tema Yap")
+   DefaultTheme2.config(text="Varsayılan Tema Yap")
 
+   
 
 def DarkTheme():
     win.config(bg="black")
@@ -54,6 +67,9 @@ def DarkTheme():
     LightTheme2.config(fg="white")
     DefaultTheme2.config(bg="black")
     DefaultTheme2.config(fg="white")
+    notification.notify(
+   title="KodPixel-X-Second-Timer",
+   message="Başarıyla Tema  DarkTheme Değiştirildi")
 
     config['settings'] = {
        'color': 'darktheme'
@@ -97,6 +113,9 @@ def LightTheme():
     LightTheme2.config(fg="black")
     DefaultTheme2.config(bg="white")
     DefaultTheme2.config(fg="black")
+    notification.notify(
+   title="KodPixel-X-Second-Timer",
+   message="Başarıyla Tema LightTheme Değiştirildi")
 
     config['settings'] = {
        'color': 'lighttheme'
@@ -141,6 +160,10 @@ def DefaultTheme():
    LightTheme2.config(fg="black")
    DefaultTheme2.config(bg="red")
    DefaultTheme2.config(fg="yellow")
+
+   notification.notify(
+   title="KodPixel-X-Second-Timer",
+   message="Başarıyla Tema DefaultTheme Değiştirildi")
 
    config['settings'] = {
        'color': 'defaulttheme'
@@ -328,6 +351,9 @@ LightTheme2.pack()
 
 DefaultTheme2 = tk.Button(win, text="DefaultTheme", command=DefaultTheme)
 DefaultTheme2.pack()
+
+tryap = tk.Button(win, text="Türkçe Yapmak İçin Tıklayınız Butona", command=TR)
+tryap.pack()
 
 
 global txtsave
