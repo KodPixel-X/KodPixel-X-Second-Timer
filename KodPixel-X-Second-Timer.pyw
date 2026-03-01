@@ -28,7 +28,30 @@ def TR():
    DarkTheme2.config(text="Siyah Tema Yap")
    LightTheme2.config(text="Açık Tema Yap")
    DefaultTheme2.config(text="Varsayılan Tema Yap")
+   buttono.config(text="ArkaPlanı Turuncu Yap")
+   buttonw.config(text="ArkaPlan Rengini Beyaz Yap")
+   buttonbb.config(text="ArkaPlan Rengini Siyah Yap")
+   buttony.config(text="ArkaPlan Rengini Sarı Yap")
+   buttong.config(text="ArkaPlan Rengini Yeşil Yap")
+   buttonr.config(text="ArkaPlan Rengini Kırmızı Yap")
 
+def EN():
+    buttonb.config(text="Make the background blue.")
+    buttonPause.config(text="Pause")
+    txtopenb.config(text="Open")
+    buttonStop.config(text="Stop")
+    buttonabout.config(text="About")
+    txtsavebutton.config(text="Save")
+    DarkTheme2.config(text="DarkTheme")
+    LightTheme2.config(text="LightTheme")
+    DefaultTheme2.config(text="DefaultTheme")
+    buttono.config(text="Make the background orange.")
+    buttonw.config(text="Make the background white.")
+    buttonbb.config(text="Make the background black.")
+    buttony.config(text="Make the background yellow.")
+    buttong.config(text="Make the background green.")
+    buttonr.config(text="Make the background red.")
+   
    
 
 def DarkTheme():
@@ -354,6 +377,9 @@ DefaultTheme2.pack()
 
 tryap = tk.Button(win, text="Türkçe Yapmak İçin Tıklayınız Butona", command=TR)
 tryap.pack()
+
+enmake = tk.Button(win, text="Click the button to make it in English.", command=EN)
+enmake.pack()
 
 
 global txtsave

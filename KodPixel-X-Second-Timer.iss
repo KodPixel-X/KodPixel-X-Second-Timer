@@ -1,7 +1,7 @@
 [Setup]
 AppName=KodPixel-X-Second-Timer
-AppVersion=1.0.1
-AppVerName=KodPixel-X-Second-Timer-1.0.1
+AppVersion=1.1
+AppVerName=KodPixel-X-Second-Timer-1.1
 DefaultDirName={pf}\KodPixel-X-Second-Timer
 OutputBaseFilename=KodPixel-X-Second-Timer-Setup
 Compression=lzma
