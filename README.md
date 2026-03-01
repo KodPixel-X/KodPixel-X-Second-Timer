@@ -1,4 +1,4 @@
-#KodPixel-X-Second-Timer
+KodPixel-X-Second-Timer
 
 Supported Platform: Windows
 
