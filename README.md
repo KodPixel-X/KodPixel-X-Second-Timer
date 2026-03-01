@@ -1,3 +1,5 @@
+#KodPixel-X-Second-Timer
+
 Supported Platform: Windows
 
 Coded in Python 3.13.11
